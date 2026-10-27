@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps — искусство сложной работы</title>
+  <meta name="description" content="Сайт о сложной и красивой работе DevOps-инженера: CI/CD, инфраструктура как код, Kubernetes, мониторинг и культура надёжности.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== Фоновые эффекты ===== -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <!-- ===== Навигация ===== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-icon">&gt;_</span>
+        <span>devops<span class="accent">.way</span></span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#practices">Практики</a>
+        <a href="#pipeline">Пайплайн</a>
+        <a href="#tools">Инструменты</a>
+        <a href="#day">День из жизни</a>
+        <a href="#game">Мини-игра</a>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <div class="hero__badge reveal">
+          <span class="pulse-dot"></span> Культура · Автоматизация · Надёжность
+        </div>
+        <h1 class="hero__title reveal">
+          DevOps — это не должность.<br>
+          Это <span class="gradient-text">искусство сложности</span>.
+        </h1>
+        <p class="hero__subtitle reveal">
+          DevOps-инженер соединяет разработку и эксплуатацию: строит пайплайны,
+          управляет тысячами серверов как кодом и тушит инциденты, пока город спит.
+          Это работа на стыке кода, систем и людей.
+        </p>
+        <div class="hero__actions reveal">
+          <a href="#practices" class="btn btn--primary">Изучить практики</a>
+          <a href="#day" class="btn btn--ghost">День из жизни →</a>
+        </div>
+        <div class="hero__stats reveal">
+          <div class="stat">
+            <div class="stat__value" data-count="99.99" data-decimals="2" data-suffix="%">0</div>
+            <div class="stat__label">доступность систем</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value" data-count="30" data-suffix="+">0</div>
+            <div class="stat__label">деплоев в день</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value" data-count="500" data-suffix="+">0</div>
+            <div class="stat__label">серверов под управлением</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value" data-count="24" data-suffix="/7">0</div>
+            <div class="stat__label">дежурство и мониторинг</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__terminal reveal">
+        <div class="terminal">
+          <div class="terminal__header">
+            <span class="dot dot--red"></span>
+            <span class="dot dot--yellow"></span>
+            <span class="dot dot--green"></span>
+            <span class="terminal__title">devops@production: ~</span>
+          </div>
+          <div class="terminal__body" id="terminalBody"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Практики ===== -->
+  <section class="section" id="practices">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__tag">// практики</span>
+        <h2>Шесть китов <span class="gradient-text">DevOps</span></h2>
+        <p>Сложность работы в том, что нужно одновременно владеть кодом, инфраструктурой и процессами. Вот на чём всё держится.</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card__icon">🔁</div>
+          <h3>CI / CD</h3>
+          <p>Непрерывная интеграция и доставка: каждый коммит автоматически собирается, тестируется и уезжает в продакшн без страха и ручных действий.</p>
+          <div class="card__tags"><span>GitLab CI</span><span>Jenkins</span><span>GitHub Actions</span></div>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon">📜</div>
+          <h3>Infrastructure as Code</h3>
+          <p>Серверы, сети и балансировщики описываются кодом в Git. Инфраструктура версионируется, ревьюится и пересоздаётся за минуты.</p>
+          <div class="card__tags"><span>Terraform</span><span>Ansible</span><span>Pulumi</span></div>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon">📦</div>
+          <h3>Контейнеризация</h3>
+          <p>Приложения упаковываются в контейнеры и оркестрируются кластерами. Сотни подов масштабируются и перезапускаются сами.</p>
+          <div class="card__tags"><span>Docker</span><span>Kubernetes</span><span>Helm</span></div>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon">📈</div>
+          <h3>Мониторинг и observability</h3>
+          <p>Метрики, логи и трейсы показывают здоровье системы раньше, чем заметит пользователь. Алерты будят дежурного, а не клиентов.</p>
+          <div class="card__tags"><span>Prometheus</span><span>Grafana</span><span>ELK</span></div>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon">🛡️</div>
+          <h3>DevSecOps</h3>
+          <p>Безопасность встроена в пайплайн: сканирование образов, секретов и зависимостей происходит до деплоя, а не после взлома.</p>
+          <div class="card__tags"><span>Trivy</span><span>Vault</span><span>SAST/DAST</span></div>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon">🤝</div>
+          <h3>Культура и SRE</h3>
+          <p>Общая ответственность за прод, blameless-разборы инцидентов, SLO и error budget. Люди и процессы — самая сложная часть системы.</p>
+          <div class="card__tags"><span>SLO</span><span>Postmortem</span><span>On-call</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Пайплайн ===== -->
+  <section class="section section--alt" id="pipeline">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__tag">// путь коммита</span>
+        <h2>От строки кода <span class="gradient-text">до продакшена</span></h2>
+        <p>Нажмите на этап, чтобы увидеть, что происходит внутри. Весь путь занимает 10–15 минут и не требует человека.</p>
+      </div>
+
+      <div class="pipeline reveal">
+        <div class="pipeline__track">
+          <button class="pstep is-active" data-step="0">
+            <span class="pstep__num">01</span>
+            <span class="pstep__icon">✍️</span>
+            <span class="pstep__name">Commit</span>
+          </button>
+          <div class="pipeline__line"></div>
+          <button class="pstep" data-step="1">
+            <span class="pstep__num">02</span>
+            <span class="pstep__icon">🔨</span>
+            <span class="pstep__name">Build</span>
+          </button>
+          <div class="pipeline__line"></div>
+          <button class="pstep" data-step="2">
+            <span class="pstep__num">03</span>
+            <span class="pstep__icon">🧪</span>
+            <span class="pstep__name">Test</span>
+          </button>
+          <div class="pipeline__line"></div>
+          <button class="pstep" data-step="3">
+            <span class="pstep__num">04</span>
+            <span class="pstep__icon">🚀</span>
+            <span class="pstep__name">Deploy</span>
+          </button>
+          <div class="pipeline__line"></div>
+          <button class="pstep" data-step="4">
+            <span class="pstep__num">05</span>
+            <span class="pstep__icon">📡</span>
+            <span class="pstep__name">Monitor</span>
+          </button>
+        </div>
+
+        <div class="pipeline__detail" id="pipelineDetail">
+          <pre class="pipeline__code" id="pipelineCode"></pre>
+          <p class="pipeline__desc" id="pipelineDesc"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Инструменты ===== -->
+  <section class="section" id="tools">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__tag">// арсенал</span>
+        <h2>Инструменты, которыми <span class="gradient-text">живёт инженер</span></h2>
+        <p>Зоопарк технологий — часть профессии. Каждый год добавляются новые, но база остаётся.</p>
+      </div>
+      <div class="tools reveal">
+        <div class="tool" title="Платформа контейнеризации"><span class="tool__logo">🐳</span>Docker</div>
+        <div class="tool" title="Оркестрация контейнеров"><span class="tool__logo">☸️</span>Kubernetes</div>
+        <div class="tool" title="Инфраструктура как код"><span class="tool__logo">🏗️</span>Terraform</div>
+        <div class="tool" title="Управление конфигурациями"><span class="tool__logo">🅰️</span>Ansible</div>
+        <div class="tool" title="CI/CD сервер"><span class="tool__logo">🤖</span>Jenkins</div>
+        <div class="tool" title="DevOps платформа"><span class="tool__logo">🦊</span>GitLab</div>
+        <div class="tool" title="Сбор метрик"><span class="tool__logo">🔥</span>Prometheus</div>
+        <div class="tool" title="Визуализация дашбордов"><span class="tool__logo">📊</span>Grafana</div>
+        <div class="tool" title="Централизованные логи"><span class="tool__logo">🔍</span>ELK Stack</div>
+        <div class="tool" title="Распределённая трассировка"><span class="tool__logo">🧵</span>Jaeger</div>
+        <div class="tool" title="Облачная платформа"><span class="tool__logo">☁️</span>AWS / Yandex Cloud</div>
+        <div class="tool" title="Хранение секретов"><span class="tool__logo">🔐</span>HashiCorp Vault</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== День из жизни ===== -->
+  <section class="section section--alt" id="day">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__tag">// хроника</span>
+        <h2>Один день <span class="gradient-text">дежурного инженера</span></h2>
+        <p>Спокойных дней не бывает — бывают дни без инцидентов. И это тоже заслуга DevOps.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-item__time">09:00</div>
+          <div class="tl-item__body">
+            <h3>Стендап и проверка ночных алертов</h3>
+            <p>Команда синхронизируется, дежурный рассказывает, что горело ночью. Grafana уже открыта на втором мониторе.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-item__time">10:30</div>
+          <div class="tl-item__body">
+            <h3>Ревью Terraform-плана</h3>
+            <p>Коллега добавил новый кластер БД. Инженер смотрит diff: «+3 инстанса, −0. План выглядит безопасно».</p>
+          </div>
+        </div>
+        <div class="tl-item tl-item--alert reveal">
+          <div class="tl-item__time">12:15</div>
+          <div class="tl-item__body">
+            <h3>🚨 Инцидент: растёт latency API</h3>
+            <p>P99 latency вырос до 2 секунд. По графикам видно: один из подов в рестартах. Откат релиза через `helm rollback` — 40 секунд, и всё зелёное.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-item__time">14:00</div>
+          <div class="tl-item__body">
+            <h3>Оптимизация пайплайна</h3>
+            <p>Сборка шла 18 минут. Кэширование Docker-слоёв и параллельные тесты сократили её до 6. Маленькая победа каждый день.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-item__time">16:30</div>
+          <div class="tl-item__body">
+            <h3>Blameless-разбор инцидента</h3>
+            <p>Без поиска виноватых: почему алерт сработал поздно? Добавляем метрику и порог. Система становится чуть умнее.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-item__time">18:00</div>
+          <div class="tl-item__body">
+            <h3>Передача дежурства</h3>
+            <p>Handover-заметка в вики, телефон передан следующему. Прод стабилен, error budget не потрачен. Можно выдохнуть.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Мини-игра ===== -->
+  <section class="section" id="game">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__tag">// мини-игра</span>
+        <h2>Охотник за <span class="gradient-text">инцидентами</span></h2>
+        <p>Поды падают — вы дежурный. Кликайте по упавшим подам, чтобы перезапустить их, и удерживайте uptime выше 99%. Смена длится 30 секунд.</p>
+      </div>
+
+      <div class="game reveal">
+        <div class="game__hud">
+          <div class="game__stat">
+            <span class="game__stat-label">Uptime</span>
+            <span class="game__stat-value" id="gameUptime">100.00%</span>
+          </div>
+          <div class="game__stat">
+            <span class="game__stat-label">Починено</span>
+            <span class="game__stat-value" id="gameFixed">0</span>
+          </div>
+          <div class="game__stat">
+            <span class="game__stat-label">Время</span>
+            <span class="game__stat-value" id="gameTime">30</span>
+          </div>
+        </div>
+
+        <div class="game__grid" id="gameGrid"></div>
+
+        <div class="game__overlay" id="gameOverlay">
+          <div class="game__overlay-card">
+            <h3 id="gameOverlayTitle">Готов к дежурству?</h3>
+            <p id="gameOverlayText">Продержи uptime выше 99% все 30 секунд. Падающие поды — красные.</p>
+            <button class="btn btn--primary" id="gameStartBtn">Начать смену</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Цитата / CTA ===== -->
+  <section class="section quote-section">
+    <div class="container">
+      <blockquote class="quote reveal">
+        <p>«Вы строите не серверы. Вы строите <span class="gradient-text">систему, которая не даёт вам проснуться в 3 часа ночи</span>.»</p>
+        <cite>— принцип SRE</cite>
+      </blockquote>
+      <div class="quote__cta reveal">
+        <a href="#hero" class="btn btn--primary">Начать путь в DevOps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Футер ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo">&gt;_ devops<span class="accent">.way</span></div>
+      <p>Сделано с ❤️ и 99.99% uptime · <span id="year"></span></p>
+      <div class="footer__links">
+        <a href="#practices">Практики</a>
+        <a href="#pipeline">Пайплайн</a>
+        <a href="#tools">Инструменты</a>
+        <a href="#day">День из жизни</a>
+        <a href="#game">Мини-игра</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
